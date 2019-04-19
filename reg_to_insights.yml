@@ -1,0 +1,14 @@
+---
+- name: Register infrastructure server to Satellite
+  hosts: "{{ idm_hosts }}"
+  tasks:
+    - name: install insights client on host machines
+      yum:
+        name: insights-client
+        state: latest
+
+    - name: register host to insights service
+      command:
+        name: insights-client --register
+        args:
+          warn: no
