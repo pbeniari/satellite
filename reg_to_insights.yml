@@ -8,6 +8,6 @@
         state: latest
 
     - name: register host to insights service
-      command:
-        name: insights-client --register
-  
+      command: insights-client --register
+      args:
+        warn: no
