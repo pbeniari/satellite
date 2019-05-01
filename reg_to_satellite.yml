@@ -1,6 +1,6 @@
 ---
 - name: Register infrastructure server to Satellite
-  hosts: "{{ idm_hosts }}"
+  hosts: all
   tasks:
     - name: clean existing registration and start fresh
       redhat_subscription:
