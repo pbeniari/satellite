@@ -14,7 +14,7 @@
     - name: register node to the Satellite server
       redhat_subscription:
         state: present
-        activationkey: "{{ activation_key }}"
+        activationkey: {{ activation_key }}
         org_id: Beniaris
 
     - name: install katello agent on the server
