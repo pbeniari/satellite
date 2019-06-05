@@ -2,11 +2,17 @@
 - name: Register infrastructure server to Satellite
   hosts: "{{ idm_hosts }}"
   tasks:
-    #- name: clean existing registration and start fresh
-     # redhat_subscription:
-      #  state: absent
+    - name: unregister the host subscription
+      command: subscription-manager unregister
+      args:
+        warn: no
+        
+    - name: clean local subscription data from the host
+      command: subscription-manager clean
+      args:
+        warn: no
 
-    - name: install katello-ca-consumer-latest certificate
+- name: install katello-ca-consumer-latest certificate
       command: yum localinstall -y http://sat-server.beniaris.com/pub/katello-ca-consumer-latest.noarch.rpm
       args:
         warn: no
