@@ -1,6 +1,6 @@
 ---
 - name: Register infrastructure server to Satellite
-  hosts: {{ idm_hosts }}
+  hosts: "{{ idm_hosts }}"
   tasks:
     - name: install insights client on host machines
       yum:
