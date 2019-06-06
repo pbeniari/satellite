@@ -12,7 +12,7 @@
       args:
         warn: no
 
-- name: install katello-ca-consumer-latest certificate
+    - name: install katello-ca-consumer-latest certificate
       command: yum localinstall -y http://sat-server.beniaris.com/pub/katello-ca-consumer-latest.noarch.rpm
       args:
         warn: no
