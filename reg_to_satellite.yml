@@ -2,11 +2,6 @@
 - name: Register infrastructure server to Satellite
   hosts: "{{ idm_hosts }}"
   tasks:
-    - name: unregister the host subscription
-      command: subscription-manager unregister
-      args:
-        warn: no
-        
     - name: clean local subscription data from the host
       command: subscription-manager clean
       args:
